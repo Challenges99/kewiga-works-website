@@ -1,0 +1,4 @@
+# Netlify redirects (read automatically on drag-and-drop deploys)
+/referrals         /rewards/#referrals   301
+/referrals/        /rewards/#referrals   301
+/assets/img/*      /img/:splat           301
