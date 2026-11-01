@@ -5,6 +5,7 @@ import { Footer } from '@/components/Footer';
 import { MobileWaBar } from '@/components/MobileWaBar';
 import { RevealObserver } from '@/components/RevealObserver';
 import { SITE } from '@/lib/site';
+import { BASE_PATH, asset } from '@/lib/paths';
 import './globals.css';
 
 // Fonts are stored in src/fonts and served from our own domain, so visitors' browsers
@@ -23,8 +24,10 @@ export const metadata: Metadata = {
     images: [{ url: '/img/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
-  icons: { icon: '/img/favicon-32.png', apple: '/img/apple-touch-icon.png' },
-  manifest: '/site.webmanifest',
+  icons: { icon: asset('/img/favicon-32.png'), apple: asset('/img/apple-touch-icon.png') },
+  manifest: asset('/site.webmanifest'),
+  // The GitHub Pages copy is a preview: keep it out of Google so it never competes with kewigaworks.com.
+  ...(BASE_PATH ? { robots: { index: false, follow: false } } : {}),
 };
 
 export const viewport: Viewport = {
@@ -39,7 +42,7 @@ export const viewport: Viewport = {
 const BOOT = `document.documentElement.classList.add('js');
 (function(){var m=location.hash.match(/^#\\/([a-z]*)(?:\\/([\\w-]+))?$/);if(!m)return;
 var ok=['plans','rewards','estates','referrals','artisans','faq'];var p=m[1]==='referrals'?'/rewards/':(ok.indexOf(m[1])>-1?'/'+m[1]+'/':'/');
-location.replace(p+(m[2]?'#'+m[2]:(m[1]==='referrals'?'#referrals':'')));})();`;
+location.replace(${JSON.stringify(BASE_PATH)}+p+(m[2]?'#'+m[2]:(m[1]==='referrals'?'#referrals':'')));})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

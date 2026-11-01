@@ -1,3 +1,5 @@
+import { asset } from '@/lib/paths';
+
 /** Responsive photo: phones get the 480/760px copies made by scripts/make-images.mjs. */
 const SIZES: Record<string, [number, number]> = {
   'abuja-estate-aerial': [1080, 1068],
@@ -17,8 +19,8 @@ export function Photo({ name, alt, sizes = '(max-width: 760px) 100vw, 50vw', pri
     // eslint-disable-next-line @next/next/no-img-element
     <img
       className={className}
-      src={`/img/${name}.webp`}
-      srcSet={`/img/${name}-480w.webp 480w, /img/${name}-760w.webp 760w, /img/${name}.webp ${w}w`}
+      src={asset(`/img/${name}.webp`)}
+      srcSet={`${asset(`/img/${name}-480w.webp`)} 480w, ${asset(`/img/${name}-760w.webp`)} 760w, ${asset(`/img/${name}.webp`)} ${w}w`}
       sizes={sizes}
       alt={alt}
       width={w}

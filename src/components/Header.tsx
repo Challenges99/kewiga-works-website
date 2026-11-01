@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Icon, WhatsAppIcon } from './Icon';
 import { waLink, WA_HELLO } from '@/lib/site';
+import { asset } from '@/lib/paths';
 
 const NAV = [
   { href: '/plans/', label: 'Plans' },
@@ -48,7 +49,7 @@ export function Header() {
       <header className={'site-header' + (scrolled ? ' is-scrolled' : '') + (open ? ' is-open' : '')}>
         <div className="wrap nav">
           <Link className="brand" href="/" aria-label="Kewiga Works home">
-            <Image src="/img/logo-horizontal.png" alt="Kewiga Works" width={480} height={136} priority className="brand-logo" />
+            <Image src={asset('/img/logo-horizontal.png')} alt="Kewiga Works" width={480} height={136} priority className="brand-logo" />
           </Link>
           <nav className="nav-links" aria-label="Main">
             {NAV.map((item) => (

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Icon } from './Icon';
 import { Fill, isProd } from './Fill';
 import { COMPANY, SITE, TRUST, waLink } from '@/lib/site';
+import { asset } from '@/lib/paths';
 
 const VETTING = [
   ['ID check', 'A valid NIN slip, voter’s card, driver’s licence or passport, checked before anything else.'],
@@ -63,7 +64,7 @@ export function Founder() {
       <div className="founder-photo">
         {TRUST.founderPhoto
           // eslint-disable-next-line @next/next/no-img-element
-          ? <img src={TRUST.founderPhoto} alt={SITE.founder} width={320} height={320} loading="lazy" />
+          ? <img src={asset(TRUST.founderPhoto)} alt={SITE.founder} width={320} height={320} loading="lazy" />
           : <span className="founder-initials" aria-hidden="true">KG</span>}
         {!TRUST.founderPhoto && <Fill what="your photo" />}
       </div>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { COMPANY, PLANS, SITE, naira, waLink, WA_HELLO } from '@/lib/site';
 import { Fill } from './Fill';
+import { asset } from '@/lib/paths';
 
 export function Footer() {
   return (
@@ -10,7 +11,7 @@ export function Footer() {
         <div className="foot-grid">
           <div className="foot-col foot-brand">
             <Link href="/" aria-label="Kewiga Works home">
-              <Image src="/img/logo-stacked.png" alt="Kewiga Works" width={400} height={305} className="footer-logo" />
+              <Image src={asset('/img/logo-stacked.png')} alt="Kewiga Works" width={400} height={305} className="footer-logo" />
             </Link>
             <p>Home and office maintenance on a monthly plan in Abuja. Fixed prices, verified artisans, booked on WhatsApp.</p>
           </div>
