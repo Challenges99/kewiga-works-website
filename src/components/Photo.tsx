@@ -6,6 +6,8 @@ const SIZES: Record<string, [number, number]> = {
   'audience-home': [900, 600],
   'audience-office': [900, 505],
   'service-ac': [900, 675],
+  'service-carpentry': [618, 618],
+  'service-cleaning': [618, 618],
   'service-electrical': [900, 599],
   'service-painting': [900, 599],
   'service-plumbing': [900, 630],
