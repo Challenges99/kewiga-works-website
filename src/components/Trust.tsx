@@ -3,6 +3,7 @@ import { Icon } from './Icon';
 import { Fill, isProd } from './Fill';
 import { COMPANY, SITE, TRUST, waLink } from '@/lib/site';
 import { asset } from '@/lib/paths';
+import { FounderStory } from './FounderStory';
 
 const VETTING = [
   ['ID check', 'A valid NIN slip, voter’s card, driver’s licence or passport, checked before anything else.'],
@@ -71,7 +72,7 @@ export function Founder() {
       <div className="founder-copy">
         <h3 className="founder-title">Why I Started Kewiga Works</h3>
         {TRUST.founderStory
-          ? <div className="founder-story">{TRUST.founderStory.map((p) => <p key={p.slice(0, 30)}>{p}</p>)}</div>
+          ? <FounderStory paragraphs={TRUST.founderStory} />
           : <><p className="founder-fallback">Kewiga Works is a registered Abuja company with a named, reachable founder.</p><Fill what="founder statement" /></>}
         <p className="founder-sign">
           <b>{SITE.founder}</b>
