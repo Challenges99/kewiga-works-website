@@ -69,6 +69,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="reveal">
             <h2 id="jobs-title">Common {s.name.toLowerCase()} jobs and how they’re priced</h2>
             <p>Each job is classed from our rate card before work starts. These are typical classes; we confirm yours on WhatsApp first.</p>
+            {s.note && <p className="jobs-note">{s.note}</p>}
             <div className="job-table" role="table" aria-label={`${s.name} jobs`}>
               {s.jobs.map((j) => (
                 <div className="job-row" role="row" key={j.job}>

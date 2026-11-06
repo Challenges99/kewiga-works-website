@@ -5,6 +5,7 @@
   "description": "Kewiga Works marketing site: Next.js static export",
   "scripts": {
     "dev": "next dev -p 4322",
+    "dev:fresh": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/fresh-dev.ps1",
     "images": "node scripts/make-images.mjs",
     "build": "next build",
     "preview": "node scripts/serve.mjs"

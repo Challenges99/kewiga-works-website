@@ -13,6 +13,7 @@ const NAV = [
   { href: '/services/', label: 'Services' },
   { href: '/#how', label: 'How it works' },
   { href: '/estates/', label: 'Estates & Offices' },
+  { href: '/rewards/', label: 'Rewards & Referrals' },
   { href: '/faq/', label: 'FAQ' },
 ];
 
@@ -77,10 +78,7 @@ export function Header() {
                 {item.label}<Icon name="arrow" />
               </Link>
             ))}
-            <Link href="/rewards/" style={{ '--i': NAV.length } as React.CSSProperties} onClick={() => setOpen(false)}>
-              Rewards & referrals<Icon name="arrow" />
-            </Link>
-            <Link href="/artisans/" className="btn btn-artisan menu-artisan" style={{ '--i': NAV.length + 1 } as React.CSSProperties}
+            <Link href="/artisans/" className="btn btn-artisan menu-artisan" style={{ '--i': NAV.length } as React.CSSProperties}
               onClick={() => setOpen(false)}>
               <Icon name="wrench" /> Are you an artisan? Join us
             </Link>

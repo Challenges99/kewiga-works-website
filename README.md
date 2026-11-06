@@ -39,10 +39,10 @@ Makes phone-sized copies of photos after you add or replace one in `public/img/`
 dev server runs breaks the dev server. If that happens, delete the `.next` folder and run `npm run dev` again.
 
 **OneDrive:** if `npm run dev` stops with `EINVAL: invalid argument, readlink …\.next\…`, OneDrive has interfered
-with the `.next` folder. Delete `.next`, then recreate it pinned to this PC and start again:
+with the `.next` folder. Run this instead; it clears `.next`, pins it to this PC and starts the dev server:
 
-```powershell
-Remove-Item .next -Recurse -Force; New-Item -ItemType Directory .next; attrib +P -U .next
+```bash
+npm run dev:fresh
 ```
 
 If it keeps happening, move this project folder out of OneDrive (for example to `C:\dev\`).

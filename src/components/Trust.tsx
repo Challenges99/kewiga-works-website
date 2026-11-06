@@ -64,16 +64,20 @@ export function Founder() {
       <div className="founder-photo">
         {TRUST.founderPhoto
           // eslint-disable-next-line @next/next/no-img-element
-          ? <img src={asset(TRUST.founderPhoto)} alt={SITE.founder} width={320} height={320} loading="lazy" />
+          ? <img src={asset(TRUST.founderPhoto)} alt={`${SITE.founder}, ${TRUST.founderTitle}, Kewiga Works Ltd`} width={413} height={531} loading="lazy" />
           : <span className="founder-initials" aria-hidden="true">KG</span>}
         {!TRUST.founderPhoto && <Fill what="your photo" />}
       </div>
-      <div>
-        <span className="kicker">Why I started Kewiga Works</span>
+      <div className="founder-copy">
+        <h3 className="founder-title">Why I Started Kewiga Works</h3>
         {TRUST.founderStory
-          ? <blockquote><p>{TRUST.founderStory}</p></blockquote>
-          : <><p className="founder-fallback">Kewiga Works is a registered Abuja company with a named, reachable founder. If something goes wrong, you can message me.</p><Fill what="2–4 sentences: why you started Kewiga Works" /></>}
-        <p className="founder-name"><b>{SITE.founder}</b>, founder · {COMPANY.legalName}, RC {COMPANY.rcNumber}</p>
+          ? <div className="founder-story">{TRUST.founderStory.map((p) => <p key={p.slice(0, 30)}>{p}</p>)}</div>
+          : <><p className="founder-fallback">Kewiga Works is a registered Abuja company with a named, reachable founder.</p><Fill what="founder statement" /></>}
+        <p className="founder-sign">
+          <b>{SITE.founder}</b>
+          <span>{TRUST.founderTitle}</span>
+          <span>Kewiga Works Ltd</span>
+        </p>
       </div>
     </div>
   );

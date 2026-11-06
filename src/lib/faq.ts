@@ -15,7 +15,7 @@ export const FAQ: QA[] = [
   { q: 'Which areas do you cover?', a: 'We are onboarding across Abuja: Maitama, Asokoro, Wuse, Garki, Jahi, Katampe, Life Camp, Gwarinpa, Kubwa and Lugbe. If you are nearby but not listed, ask us.', link: { href: '/areas/', label: 'Areas we cover' } },
   { q: 'How do I pay?', a: 'We confirm your plan and price on WhatsApp first. You then pay the monthly fee into the KEWIGA WORKS LTD bank account. Never pay an artisan directly, and never pay into a personal account.' },
   { q: 'Can I cancel?', a: 'Yes. Plans run month to month with no long contract. Tell us on WhatsApp at least 3 days before your renewal date and your plan will not renew.', link: { href: '/terms/#cancellation', label: 'Cancellation and refunds' } },
-  { q: 'How do Kewiga Rewards and referrals work?', a: 'At month-end, 70% of your unused plan value becomes Kewiga Rewards, worth ₦1 each towards future services. You can also earn rewards for introducing new subscribers.', link: { href: '/rewards/', label: 'Rewards and referrals' } },
+  { q: 'How do Kewiga Rewards and referrals work?', a: 'If you do not use all of your plan’s monthly service value, 70% of the unused amount becomes Kewiga Rewards at month-end. 1 Kewiga Reward equals ₦1 of Kewiga Works services, and Kewiga Rewards never expire. You can also earn rewards for introducing new subscribers.', link: { href: '/rewards/', label: 'Rewards and referrals' } },
 ];
 
 export const ARTISAN_FAQ: QA[] = [

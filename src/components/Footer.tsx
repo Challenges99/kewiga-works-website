@@ -37,7 +37,7 @@ export function Footer() {
               <li><a href={waLink(WA_HELLO, 'web-footer')} target="_blank" rel="noopener">WhatsApp: {SITE.phoneDisplay}</a></li>
               <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
               <li>{SITE.hours}</li>
-              <li>Abuja, Nigeria</li>
+              <li>{COMPANY.registeredAddress ?? 'Abuja, Nigeria'}</li>
             </ul>
           </div>
         </div>

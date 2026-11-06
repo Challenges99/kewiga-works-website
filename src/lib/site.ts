@@ -22,19 +22,27 @@ export const SITE = {
 export const COMPANY = {
   legalName: 'KEWIGA WORKS LTD',
   rcNumber: '9965563',
-  /** FILL IN: registered office address exactly as it appears on the CAC certificate. */
-  registeredAddress: null as string | null,
-  /** FILL IN: directors' full names, as registered with the CAC. */
-  directors: null as string[] | null,
+  /** Registered office address, as on the CAC certificate. Shown in every footer. */
+  registeredAddress: 'Suite 3002, Ndola Crescent, Anbeez Plaza, Wuse Zone 5, Abuja, FCT' as string | null,
+  /** Directors, as registered with the CAC. */
+  directors: ['Kelvin Wisdom Garba — Founder & Chief Executive Officer'] as string[] | null,
   cacSearchUrl: 'https://search.cac.gov.ng/',
 };
 
 /** Details for the trust section. */
 export const TRUST = {
-  /** FILL IN: 2–4 sentences in your own words: why you started Kewiga Works. */
-  founderStory: null as string | null,
-  /** FILL IN: path to a real photo of you, e.g. '/img/founder.webp' (put the file in public/img). */
-  founderPhoto: null as string | null,
+  /** The founder statement, exactly as in the Subscriber Portfolio Book (page 2). One string per paragraph. */
+  founderStory: [
+    'Every homeowner in Abuja knows the story. Something breaks — a leaking pipe, a dead socket, a door that will not close — and the real work begins: finding an artisan, begging him to show up, arguing over a price that changes halfway through the job. When the work fails, there is no one to call — he has moved on, and so has your money.',
+    'I lived that story, and I watched my family and neighbours live it too. For years I believed it was simply how things were — until I understood the real problem. Homeowners in Nigeria do not have an artisan problem; they have a system problem. There is no checking of who these men are, no price agreed before work starts, no standard for the work, and no one standing behind it when it fails. Big companies solved this long ago with facility managers and maintenance contracts. Ordinary families deserve the same protection.',
+    'That is why I started Kewiga Works. It is a simple idea: one monthly subscription, and your home’s maintenance is handled — plumbing, electrical work, painting, carpentry, air conditioning and cleaning, through one number you can trust. I put my own name into the company’s name — KElvin WIsdom GArba — because I wanted every customer to know exactly who stands behind it. If we fail you, it is my name that fails.',
+    'So we built the system I wished existed. Every artisan who works for us is identity-checked, stands with a guarantor, and passes a practical trade test before he touches a customer’s home. Every job is priced from a fixed rate card and agreed before work begins. Our workmanship is guaranteed for thirty days, and if our artisan damages your property, the company — not you — makes it right. A job is complete only when the customer gives the completion code; without it, the artisan is not paid. And the value a subscriber does not use in a quiet month is not lost — most of it returns as Kewiga Rewards for future repairs.',
+    'We are starting in Abuja, enrolling our first fifty subscribers — the Founding 50 — who will help us prove that maintenance in Nigeria can be honest, organised and dependable. My ambition is bigger than one city: a country where keeping a home in good repair is not a struggle, and where skilled artisans earn steady, dignified work through a company that treats them fairly too.',
+    'I started Kewiga Works because I was tired of chasing artisans — and I believed Abuja was tired of it too. Never chase an artisan again. That is not just our slogan. It is the promise I started this company to keep.',
+  ] as string[] | null,
+  /** The founder's photo (public/img/founder.webp, from "founder photo.jpeg"). */
+  founderPhoto: '/img/founder.webp' as string | null,
+  founderTitle: 'Founder & Chief Executive Officer',
   /** FILL IN: your Google review link from Google Business Profile ("Ask for reviews"). */
   googleReviewUrl: null as string | null,
   /** Founding-member offer: only real numbers. Leave spotsTaken null to hide the counter. */

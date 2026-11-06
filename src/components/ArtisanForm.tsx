@@ -1,16 +1,19 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Icon } from './Icon';
 import { AREAS, SITE, waLink } from '@/lib/site';
 
-const TRADES = ['Plumbing', 'Electrical', 'Painting', 'Carpentry', 'AC service & repair', 'General repairs', 'Deep cleaning', 'Other'];
+const TRADES = ['Plumbing', 'Electrical', 'Painting', 'Carpentry', 'AC service & repair', 'General repairs', 'Cleaning', 'Other'];
 const EXPERIENCE = ['Less than 1 year', '1–3 years', '4–6 years', '7–10 years', 'More than 10 years'];
 const TOOLS = ['Yes, a full set for my trade', 'Some, still building my set', 'No'];
 
 export function ArtisanForm() {
   const [sent, setSent] = useState(false);
+  // Disabled until JavaScript runs, so an early tap can't put the applicant's details in the page URL.
+  const [ready, setReady] = useState(false);
+  useEffect(() => setReady(true), []);
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -76,7 +79,7 @@ export function ArtisanForm() {
         </div>
         <div className="field"><label htmlFor="a-about">Anything else we should know?</label><textarea id="a-about" name="about" placeholder="e.g. I specialise in water heaters; I can also do tiling" /></div>
       </details>
-      <button type="submit" className="btn btn-primary btn-block"><Icon name="wrench" /> Send application on WhatsApp</button>
+      <button type="submit" className="btn btn-primary btn-block" disabled={!ready}><Icon name="wrench" /> Send application on WhatsApp</button>
       <p className="form-fine">
         This opens WhatsApp with your application ready to send to {SITE.phoneDisplay}. We use these details only to assess your application and contact your guarantor, and we delete them if you’re not taken on. See our <Link href="/privacy/">privacy policy</Link>.
       </p>

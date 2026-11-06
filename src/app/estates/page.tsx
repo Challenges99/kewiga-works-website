@@ -60,7 +60,6 @@ export default function Estates() {
               </div>
               <p>Each month bills at the tier your active households reach. Below 10 households, the standard ₦25,000 rate applies; when the count rises again, the better rate returns from that month.</p>
               <ul className="offer-list">
-                <li>Free quarterly common-area inspection for 20+ households</li>
                 <li>One coordinated onboarding</li>
                 <li>Verified artisans and the 30-Day Fix-It-Free Guarantee</li>
               </ul>

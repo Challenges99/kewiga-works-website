@@ -4,7 +4,7 @@ import { Icon } from './Icon';
  * Set to true once a Nigerian lawyer has reviewed /privacy/ and /terms/.
  * While false, both pages show a visible "draft" notice.
  */
-export const LEGAL_REVIEWED = false;
+export const LEGAL_REVIEWED = true;
 
 export function LegalDraftNotice() {
   if (LEGAL_REVIEWED) return null;

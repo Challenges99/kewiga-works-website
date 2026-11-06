@@ -62,8 +62,8 @@ export default function Terms() {
 
       <h2 id="rewards">9. Kewiga Rewards and referrals</h2>
       <ul>
-        <li>At month-end, 70% of your unused monthly labour value becomes Kewiga Rewards. 1 reward equals ₦1 of eligible Kewiga Works services.</li>
-        <li>Rewards are not cash, cannot be transferred, sold or refunded, and do not expire while your plan is active. If you cancel, unused rewards can be used for 90 days, after which they lapse.</li>
+        <li>If you do not use all of your plan’s monthly service value, 70% of the unused amount becomes Kewiga Rewards at month-end. 1 Kewiga Reward equals ₦1 of Kewiga Works services.</li>
+        <li>Kewiga Rewards never expire, including after you cancel your plan. They can be redeemed for eligible services; they are not cash, cannot be transferred or sold, and are not refundable.</li>
         <li>Referral rewards are paid as described on our <Link href="/rewards/#referrals">Rewards page</Link>. Cash referral rewards are paid only into an account in the referrer’s own name.</li>
         <li>Rewards are never given for leaving reviews.</li>
         <li>We may change or end the rewards and referral schemes with 30 days’ notice. Rewards already earned stay usable on the terms above.</li>

@@ -61,7 +61,7 @@ export default function Artisans() {
               <li>A phone with WhatsApp</li>
             </ul>
             <h3>Trades we’re recruiting</h3>
-            <ul className="chips">{['Plumbing', 'Electrical', 'Painting', 'Carpentry', 'AC service & repair', 'General repairs', 'Deep cleaning'].map((t) => <li key={t}>{t}</li>)}</ul>
+            <ul className="chips">{['Plumbing', 'Electrical', 'Painting', 'Carpentry', 'AC service & repair', 'General repairs', 'Cleaning'].map((t) => <li key={t}>{t}</li>)}</ul>
             <p className="small">Across Abuja: {AREAS.join(', ')} and nearby.</p>
           </div>
         </div>

@@ -43,7 +43,7 @@ export default function Home() {
               <span>Monthly plan</span><span>Fixed prices</span><span>No app: book on WhatsApp</span>
             </p>
             <h1 id="hero-title">Never chase an <span className="hl">artisan</span> again.</h1>
-            <p className="hero-sub">One monthly plan covers repairs across plumbing, electrical, AC, painting and carpentry in Abuja. Prices are published and fixed before work starts, and if our workmanship fails within 30 days, we redo it free.</p>
+            <p className="hero-sub">One monthly plan covers plumbing, electrical, AC, painting, carpentry and cleaning in Abuja. Prices are published and fixed before work starts, and if our workmanship fails within 30 days, we redo it free.</p>
             <div className="hero-ctas">
               <a className="btn btn-wa btn-lg" href={waLink(WA_HELLO, 'web-hero')} target="_blank" rel="noopener">
                 <WhatsAppIcon /> Get started on WhatsApp
@@ -88,9 +88,11 @@ export default function Home() {
             <p>No more saving six artisans’ contacts and hoping one picks up.</p>
           </div>
           <div className="svc-grid">
-            {SERVICES.filter((s) => s.image).map((s, i) => (
+            {SERVICES.map((s, i) => (
               <Link key={s.slug} href={`/services/${s.slug}/`} className="svc-card reveal" style={{ '--i': i } as React.CSSProperties}>
-                <div className="svc-img"><Photo name={s.image!} alt={s.imageAlt} sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw" /></div>
+                {!s.image
+                  ? <div className="svc-img svc-icon-panel" aria-hidden="true"><Icon name={s.icon} /></div>
+                  : <div className="svc-img"><Photo name={s.image} alt={s.imageAlt} sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" /></div>}
                 <div className="svc-body">
                   <h3><Icon name={s.icon} />{s.name}</h3>
                   <p>{s.intro.split('. ')[0]}.</p>
@@ -99,7 +101,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <p className="svc-more reveal"><b>Plus <Link href="/services/carpentry/">carpentry</Link> and general repairs:</b> doors, hinges, locks, cabinets, curtain rails and furniture fixes. If it breaks in a home or office, ask us first.</p>
+          <p className="svc-more reveal"><b>Something else?</b> General repairs are covered too. If it breaks in a home or office, ask us first.</p>
         </div>
       </section>
 
@@ -167,7 +169,7 @@ export default function Home() {
           <div className="extras">
             <Link href="/rewards/" className="extra-card reveal">
               <Icon name="gift" />
-              <div><b>Kewiga Rewards</b><span>Quiet month? 70% of your unused plan value becomes rewards for future services.</span></div>
+              <div><b>Kewiga Rewards</b><span>Your quiet months still have value: 70% of your unused monthly service value becomes Kewiga Rewards, and they never expire.</span></div>
               <Icon name="arrow" />
             </Link>
             <Link href="/rewards/#referrals" className="extra-card reveal">

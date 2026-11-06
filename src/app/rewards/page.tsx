@@ -1,6 +1,7 @@
 import { PageHero } from '@/components/PageHero';
 import { BookingSection } from '@/components/BookingSection';
 import Link from 'next/link';
+import { RewardsInfo } from '@/components/RewardsInfo';
 
 export const metadata = {
   title: 'Kewiga Rewards & Referral Programme | Kewiga Works',
@@ -27,18 +28,8 @@ export default function Rewards() {
       </PageHero>
 
       <section className="tight-top" id="rewards" aria-labelledby="rewards-title">
-        <div className="wrap points-grid">
-          <div className="reveal">
-            <span className="kicker">Kewiga Rewards</span>
-            <h2 id="rewards-title">Your quiet months still have value</h2>
-            <p>If you don’t use all of your plan’s monthly labour value, <strong>70% of the unused amount becomes Kewiga Rewards</strong> towards future Kewiga Works services.</p>
-            <div className="point-example"><b>Example:</b> on Standard, you use ₦25,000 of your ₦40,000 in a month. The unused ₦15,000 becomes 10,500 Kewiga Rewards.</div>
-          </div>
-          <div className="points-rules reveal">
-            <div className="point-rule"><span className="num">70%</span><div><h3>Unused value becomes rewards</h3><p>At month-end we convert 70% of the labour value you didn’t use.</p></div></div>
-            <div className="point-rule"><span className="num">₦1</span><div><h3>Easy to understand</h3><p>1 Kewiga Reward equals ₦1 of eligible Kewiga Works services.</p></div></div>
-            <div className="point-rule"><span className="num">∞</span><div><h3>No expiry while you’re subscribed</h3><p>Rewards don’t expire while your plan is active. They are not cash, can’t be transferred or refunded, and the <Link href="/terms/#rewards">terms</Link> say what happens if you cancel.</p></div></div>
-          </div>
+        <div className="wrap reveal">
+          <RewardsInfo id="rewards-title" />
         </div>
       </section>
 

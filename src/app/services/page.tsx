@@ -7,8 +7,8 @@ import { ProjectWork } from '@/components/ProjectWork';
 import { SERVICES } from '@/lib/services';
 
 export const metadata = {
-  title: 'Home Repair Services in Abuja: Plumbing, Electrical, AC, Painting & Carpentry | Kewiga Works',
-  description: 'Plumbers, electricians, AC technicians, painters and carpenters in Abuja on one monthly maintenance plan. Fixed labour prices, verified artisans, booked on WhatsApp.',
+  title: 'Home Services in Abuja: Plumbing, Electrical, AC, Painting, Carpentry & Cleaning | Kewiga Works',
+  description: 'Plumbers, electricians, AC technicians, painters, carpenters and cleaners in Abuja on one monthly maintenance plan. Fixed labour prices, verified artisans, booked on WhatsApp.',
   alternates: { canonical: '/services/' },
 };
 
