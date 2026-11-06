@@ -56,7 +56,7 @@ export const AREAS = [
 export const JOB_TIERS = [
   { tier: 'Simple', value: 7000, examples: 'tap or leak fix, socket or switch, door lock, curtain rail' },
   { tier: 'Medium', value: 12000, examples: 'one room painted, a plumbing repair, AC servicing, a carpentry repair' },
-  { tier: 'Complex', value: 20000, examples: 'rewiring a section, tiling work' },
+  { tier: 'Complex', value: 20000, examples: 'replacing a distribution board, moving a plumbing point' },
 ] as const;
 
 export type PlanId = 'basic' | 'standard' | 'landlord' | 'business';

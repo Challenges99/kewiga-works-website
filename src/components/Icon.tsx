@@ -18,6 +18,7 @@ const PATHS: Record<string, React.ReactNode> = {
   bolt: <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" />,
   snow: <path d="M12 2v20M4.9 6.5l14.2 11M4.9 17.5l14.2-11M9 4l3 3 3-3M9 20l3-3 3 3" />,
   roller: (<><rect x="3" y="3" width="15" height="6" rx="1.5" /><path d="M18 6h3v5h-9v3" /><rect x="10" y="14" width="4" height="7" rx="1" /></>),
+  hammer: (<><path d="m15 12-8.4 8.4a2.1 2.1 0 0 1-3-3L12 9" /><path d="M17.6 15 22 10.6M20.9 11.7 12.3 3.1a5 5 0 0 0-3.5-1.4L7.5 1.7l1.6 1.6a5 5 0 0 1 1.4 3.5l-.4.4 3.5 3.5" /></>),
   home: (<><path d="M3 11.2 12 3l9 8.2" /><path d="M5.5 9.8V21h13V9.8" /></>),
   building: (<><rect x="4" y="3" width="16" height="18" rx="1.5" /><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1M11 21v-3h2v3" /></>),
   star: <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9L12 3Z" />,

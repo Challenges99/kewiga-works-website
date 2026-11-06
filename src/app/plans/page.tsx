@@ -1,6 +1,7 @@
 import { Plans } from '@/components/Plans';
 import { JobsCounted } from '@/components/JobsCounted';
 import { PlanFinder } from '@/components/PlanFinder';
+import { ProjectWork } from '@/components/ProjectWork';
 import { BookingSection } from '@/components/BookingSection';
 import { Guarantee, PayWarning } from '@/components/Trust';
 
@@ -26,6 +27,7 @@ export default function PlansPage() {
         <div className="wrap">
           <Plans headingLevel="h1" />
           <JobsCounted />
+          <ProjectWork />
         </div>
       </section>
 

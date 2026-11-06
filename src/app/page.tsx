@@ -7,6 +7,7 @@ import { BookingSection } from '@/components/BookingSection';
 import { Founder, FoundingOffer, Guarantee, PayWarning, Vetting } from '@/components/Trust';
 import { JsonLd, businessSchema } from '@/components/JsonLd';
 import { ArtisanInvite } from '@/components/ArtisanInvite';
+import { ProjectWork } from '@/components/ProjectWork';
 import { SERVICES } from '@/lib/services';
 import { waLink, WA_HELLO } from '@/lib/site';
 
@@ -87,9 +88,9 @@ export default function Home() {
             <p>No more saving six artisans’ contacts and hoping one picks up.</p>
           </div>
           <div className="svc-grid">
-            {SERVICES.map((s, i) => (
+            {SERVICES.filter((s) => s.image).map((s, i) => (
               <Link key={s.slug} href={`/services/${s.slug}/`} className="svc-card reveal" style={{ '--i': i } as React.CSSProperties}>
-                <div className="svc-img"><Photo name={s.image} alt={s.imageAlt} sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw" /></div>
+                <div className="svc-img"><Photo name={s.image!} alt={s.imageAlt} sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw" /></div>
                 <div className="svc-body">
                   <h3><Icon name={s.icon} />{s.name}</h3>
                   <p>{s.intro.split('. ')[0]}.</p>
@@ -98,7 +99,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <p className="svc-more reveal"><b>Plus carpentry and general repairs:</b> doors, hinges, locks, cabinets, curtain rails and furniture fixes. If it breaks in a home or office, ask us first.</p>
+          <p className="svc-more reveal"><b>Plus <Link href="/services/carpentry/">carpentry</Link> and general repairs:</b> doors, hinges, locks, cabinets, curtain rails and furniture fixes. If it breaks in a home or office, ask us first.</p>
         </div>
       </section>
 
@@ -139,6 +140,7 @@ export default function Home() {
         <div className="wrap">
           <Plans />
           <JobsCounted />
+          <ProjectWork />
         </div>
       </section>
 

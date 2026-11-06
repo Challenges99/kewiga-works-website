@@ -5,6 +5,7 @@ import { Icon, WhatsAppIcon } from '@/components/Icon';
 import { Accordion } from '@/components/Accordion';
 import { BookingSection } from '@/components/BookingSection';
 import { Guarantee } from '@/components/Trust';
+import { ProjectWork } from '@/components/ProjectWork';
 import { JsonLd, faqSchema } from '@/components/JsonLd';
 import { SERVICES, serviceBySlug } from '@/lib/services';
 import { JOB_TIERS, PLANS, SITE, naira, waLink } from '@/lib/site';
@@ -57,7 +58,9 @@ export default async function ServicePage({ params }: Props) {
               <Link className="btn btn-ghost" href="/plans/">See plans</Link>
             </div>
           </div>
-          <div className="svc-hero-img"><Photo name={s.image} alt={s.imageAlt} priority sizes="(max-width: 900px) 100vw, 480px" /></div>
+          {s.image
+            ? <div className="svc-hero-img"><Photo name={s.image} alt={s.imageAlt} priority sizes="(max-width: 900px) 100vw, 480px" /></div>
+            : <div className="svc-hero-img svc-icon-panel" aria-hidden="true"><Icon name={s.icon} /></div>}
         </div>
       </section>
 
@@ -75,6 +78,13 @@ export default async function ServicePage({ params }: Props) {
                 </div>
               ))}
             </div>
+            {s.projects.length > 0 && (
+              <p className="project-line">
+                <b>Project work (quoted per job):</b>
+                <span>{s.projects.join(' · ')}</span>
+                <a href="#project-work">How project work works</a>
+              </p>
+            )}
             <p className="small">The value is the labour that comes off your plan’s monthly allowance, or the member rate if the job is beyond your plan.</p>
           </div>
 
@@ -95,6 +105,7 @@ export default async function ServicePage({ params }: Props) {
             </div>
           </aside>
         </div>
+        <div className="wrap"><ProjectWork /></div>
       </section>
 
       <section className="section-alt" aria-labelledby="svc-book-title">

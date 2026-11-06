@@ -3,11 +3,12 @@ import { PageHero } from '@/components/PageHero';
 import { Photo } from '@/components/Photo';
 import { Icon } from '@/components/Icon';
 import { BookingSection } from '@/components/BookingSection';
+import { ProjectWork } from '@/components/ProjectWork';
 import { SERVICES } from '@/lib/services';
 
 export const metadata = {
-  title: 'Home Repair Services in Abuja: Plumbing, Electrical, AC & Painting | Kewiga Works',
-  description: 'Plumbers, electricians, AC technicians and painters in Abuja on one monthly maintenance plan. Fixed labour prices, verified artisans, booked on WhatsApp.',
+  title: 'Home Repair Services in Abuja: Plumbing, Electrical, AC, Painting & Carpentry | Kewiga Works',
+  description: 'Plumbers, electricians, AC technicians, painters and carpenters in Abuja on one monthly maintenance plan. Fixed labour prices, verified artisans, booked on WhatsApp.',
   alternates: { canonical: '/services/' },
 };
 
@@ -22,7 +23,9 @@ export default function ServicesHub() {
           <div className="svc-grid svc-grid-lg">
             {SERVICES.map((s, i) => (
               <Link key={s.slug} href={`/services/${s.slug}/`} className="svc-card reveal" style={{ '--i': i } as React.CSSProperties}>
-                <div className="svc-img"><Photo name={s.image} alt={s.imageAlt} sizes="(max-width: 700px) 100vw, 50vw" /></div>
+                {s.image
+                  ? <div className="svc-img"><Photo name={s.image} alt={s.imageAlt} sizes="(max-width: 700px) 100vw, 50vw" /></div>
+                  : <div className="svc-img svc-icon-panel" aria-hidden="true"><Icon name={s.icon} /></div>}
                 <div className="svc-body">
                   <h2 className="h3"><Icon name={s.icon} />{s.name}</h2>
                   <p>{s.intro}</p>
@@ -31,7 +34,8 @@ export default function ServicesHub() {
               </Link>
             ))}
           </div>
-          <p className="svc-more reveal"><b>Carpentry and general repairs</b> are covered too: doors, hinges, locks, cabinets, curtain rails and furniture fixes. Message us with a photo and we’ll tell you how the job is classed.</p>
+          <p className="svc-more reveal"><b>General repairs</b> are covered too. Message us with a photo and we’ll tell you how the job is classed.</p>
+          <ProjectWork />
         </div>
       </section>
       <BookingSection />

@@ -26,7 +26,7 @@ export function Accordion({ items, firstOpen = false }: { items: QA[]; firstOpen
             </h3>
             <div className="faq-a" id={`${base}-${i}`} role="region" aria-labelledby={`${base}-q${i}`} inert={!isOpen}>
               <div className="faq-a-inner">
-                <p>{item.a}</p>
+                {item.a.split('\n\n').map((para) => <p key={para.slice(0, 24)}>{para}</p>)}
                 {item.link && <p><Link href={item.link.href}>{item.link.label} →</Link></p>}
               </div>
             </div>

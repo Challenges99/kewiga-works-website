@@ -6,7 +6,8 @@ export interface Service {
   slug: string;
   name: string;
   icon: string;
-  image: string;
+  /** Photo name in public/img (null = show the trade icon instead). */
+  image: string | null;
   imageAlt: string;
   /** <title> aimed at how Abuja residents search: "[trade] in Abuja". */
   title: string;
@@ -14,6 +15,8 @@ export interface Service {
   h1: string;
   intro: string;
   jobs: { job: string; tier: Tier }[];
+  /** Jobs too big for a plan: surveyed and quoted per job. */
+  projects: string[];
   labour: string;
   parts: string;
   bestPlan: PlanId;
@@ -38,8 +41,10 @@ export const SERVICES: Service[] = [
       { job: 'WC cistern not filling or not flushing', tier: 'Simple' },
       { job: 'Blocked sink, shower or floor drain', tier: 'Medium' },
       { job: 'Water heater not heating', tier: 'Medium' },
-      { job: 'Replacing a section of pipework', tier: 'Complex' },
+      { job: 'Moving a plumbing point', tier: 'Complex' },
+      { job: 'Water pump installation', tier: 'Complex' },
     ],
+    projects: ['Re-piping a bathroom section', 'Installing a full bathroom set'],
     labour: 'Finding the fault, the repair itself, and testing that the water runs and drains properly afterwards.',
     parts: 'Taps, valves, pipe, fittings, cisterns and heater elements. We source them at trade price and show you the receipt; you pay for the part, your plan covers fitting it.',
     bestPlan: 'standard',
@@ -48,7 +53,7 @@ export const SERVICES: Service[] = [
       { q: 'Can you come the same day for a burst pipe?', a: 'On Landlord / Estate and Business / Office plans, emergencies get a same-day response. On Basic and Standard, we book your visit within 48 or 24 hours. In a real emergency, turn off the main stopcock first, then message us.' },
       { q: 'Do I pay for the new tap or pipe?', a: 'Yes. Parts are not included in any plan. We buy them at trade price, show you the receipt, and the labour to fit them is covered by your plan.' },
       { q: 'What if the leak comes back?', a: 'If our workmanship fails within 30 days, we come back and redo it free under the 30-Day Fix-It-Free Guarantee. Message us on WhatsApp with your job ID.' },
-      { q: 'Do you fix borehole pumps?', a: 'Pump work depends on the fault. Send us a photo or short video on WhatsApp and we will tell you before booking whether it is a job we cover and how it is classed.' },
+      { q: 'Do you fix borehole pumps?', a: 'Installing a water pump is a complex job. Pump repairs depend on the fault, so send us a photo or short video on WhatsApp and we will tell you how it is classed before booking.' },
     ],
   },
   {
@@ -67,15 +72,17 @@ export const SERVICES: Service[] = [
       { job: 'Ceiling fan or regulator fault', tier: 'Simple' },
       { job: 'Tracing an electrical fault', tier: 'Medium' },
       { job: 'Breaker or distribution board issue', tier: 'Medium' },
-      { job: 'Rewiring a section of the house', tier: 'Complex' },
+      { job: 'Replacing a distribution board', tier: 'Complex' },
+      { job: 'Gate automation repair', tier: 'Complex' },
     ],
+    projects: ['Rewiring a room or a section', 'Inverter wiring and installation'],
     labour: 'Safe isolation, finding the fault, the repair, and testing the circuit before the electrician leaves.',
     parts: 'Sockets, switches, cable, breakers, bulbs and fittings, sourced at trade price with a receipt. You pay for parts; your plan covers fitting them.',
     bestPlan: 'standard',
     bestPlanWhy: 'Electrical faults often need a medium job for fault tracing. Standard’s ₦40,000 monthly labour value covers that with room to spare.',
     faqs: [
       { q: 'Is fault tracing one job?', a: 'Yes. Tracing a fault counts as one medium job (₦12,000 of labour value). If the fix it finds is a separate repair, we tell you how it is classed before any more work starts.' },
-      { q: 'Do you install inverters or solar panels?', a: 'Not as plan jobs at the moment. Message us and we will tell you what we can help with.' },
+      { q: 'Do you install inverters or solar panels?', a: 'Inverter wiring and installation is project work: we survey the job and quote one fixed price, agreed before any work starts, and it sits outside your plan. For solar panels, message us and we will tell you what we can help with.' },
       { q: 'Are your electricians safe to let into my home?', a: 'Every artisan passes an ID check, a guarantor check and a practical trade test before their first job, and you get the artisan’s name before they arrive.' },
     ],
   },
@@ -94,8 +101,10 @@ export const SERVICES: Service[] = [
       { job: 'AC not cooling: diagnosis and repair', tier: 'Medium' },
       { job: 'Gas refill (gas charged as a material)', tier: 'Medium' },
       { job: 'Water leaking from the indoor unit', tier: 'Medium' },
-      { job: 'Moving or re-installing a split unit', tier: 'Complex' },
+      { job: 'Moving an AC unit to a new position', tier: 'Complex' },
+      { job: 'Compressor replacement', tier: 'Complex' },
     ],
+    projects: ['Installing a new AC unit'],
     labour: 'Servicing, diagnosis, the repair, and a test run to check the unit is cooling before the technician leaves.',
     parts: 'Refrigerant gas, capacitors, fan motors and other parts, sourced at trade price with a receipt. You pay for gas and parts; your plan covers the labour.',
     bestPlan: 'standard',
@@ -121,15 +130,47 @@ export const SERVICES: Service[] = [
       { job: 'Painting one room, including preparation', tier: 'Medium' },
       { job: 'Filling cracks and small wall repairs before painting', tier: 'Medium' },
       { job: 'Move-in / move-out repaint (each room counts as a job)', tier: 'Medium' },
+      { job: 'Special or textured finishes', tier: 'Complex' },
+      { job: 'A large single-day repaint (several rooms)', tier: 'Complex' },
     ],
+    projects: ['Repainting a whole flat', 'Exterior painting of a whole building'],
     labour: 'Preparation (filling, sanding and masking), painting, and leaving the room clean.',
     parts: 'Paint, filler and other materials. We source them at trade price with a receipt, or you can supply your own paint.',
     bestPlan: 'landlord',
     bestPlanWhy: 'Landlords repaint between tenants. Landlord / Estate covers up to 8 jobs a month per property, including move-in and move-out repairs.',
     faqs: [
       { q: 'Is the paint included?', a: 'No. Paint is a material. We buy it at trade price and show you the receipt, or you can buy your own. The painting and preparation labour is covered by your plan.' },
-      { q: 'How is a whole flat counted?', a: 'Each room is one medium job. A three-bedroom repaint is several jobs, so it may fit across your plan’s monthly allowance or go beyond it at member rates, always agreed with you first.' },
+      { q: 'How is a whole flat counted?', a: 'Repainting a whole flat is project work: we survey it and quote one fixed price for the whole job, agreed before any work starts, and it never uses your plan’s monthly jobs. A single room is one medium job, and several rooms repainted in one day is one complex job.' },
       { q: 'Can I choose the colour and brand?', a: 'Yes. Tell us the colour and brand, or ask us to suggest one, before the job is booked.' },
+    ],
+  },
+  {
+    slug: 'carpentry',
+    name: 'Carpentry',
+    icon: 'hammer',
+    image: null,
+    imageAlt: '',
+    title: 'Carpenter in Abuja: Door, Lock & Furniture Repairs on a Monthly Plan | Kewiga Works',
+    description: 'Carpenters in Abuja for doors, hinges, locks, cabinets, curtain rails and furniture repairs. Fixed labour prices on a monthly plan, booked on WhatsApp.',
+    h1: 'Carpenter in Abuja, on a monthly plan',
+    intro: 'Doors that stick, hinges and locks that fail, cabinets and furniture that need fixing, handled by a verified carpenter at a labour price agreed before work starts.',
+    jobs: [
+      { job: 'Fixing or replacing a door lock', tier: 'Simple' },
+      { job: 'Loose or broken hinges', tier: 'Simple' },
+      { job: 'Fitting or fixing a curtain rail', tier: 'Simple' },
+      { job: 'Door that sticks or won’t close properly', tier: 'Medium' },
+      { job: 'Cabinet door or drawer repair', tier: 'Medium' },
+      { job: 'New door with frame installation', tier: 'Complex' },
+    ],
+    projects: ['Building a wardrobe', 'Kitchen cabinet installation or rebuild'],
+    labour: 'Measuring, the repair or fitting, and checking that doors, drawers and locks open and close properly before the carpenter leaves.',
+    parts: 'Locks, hinges, handles, wood, boards and fittings, sourced at trade price with a receipt. You pay for parts; your plan covers fitting them.',
+    bestPlan: 'standard',
+    bestPlanWhy: 'Most carpentry fixes are simple or medium jobs. Standard covers up to 4 jobs a month across every trade, booked within 24 hours.',
+    faqs: [
+      { q: 'Do you make new furniture?', a: 'Building a wardrobe or new kitchen cabinets is project work: we survey the job and quote one fixed price, agreed before any work starts, and it sits outside your plan. Repairs to furniture you already have are plan jobs.' },
+      { q: 'Do I pay for the new lock or hinges?', a: 'Yes. Parts are not included in any plan. We buy them at trade price and show you the receipt, and the labour to fit them is covered by your plan.' },
+      { q: 'What if the door sticks again?', a: 'If our workmanship fails within 30 days, we come back and redo it free under the 30-Day Fix-It-Free Guarantee.' },
     ],
   },
 ];
