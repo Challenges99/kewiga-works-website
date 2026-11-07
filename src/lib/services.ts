@@ -164,9 +164,7 @@ export const SERVICES: Service[] = [
       { job: 'Door re-hanging', tier: 'Medium' },
       { job: 'Repairing a wardrobe door or drawer set', tier: 'Medium' },
       { job: 'Replacing a door in the same frame', tier: 'Medium' },
-      { job: 'Building and installing a wardrobe', tier: 'Complex' },
       { job: 'New door with frame installation', tier: 'Complex' },
-      { job: 'Kitchen cabinet installation or rebuild', tier: 'Complex' },
     ],
     projects: [],
     labour: 'Measuring, the repair or fitting, and checking that doors, drawers and locks open and close properly before the carpenter leaves.',
@@ -174,7 +172,6 @@ export const SERVICES: Service[] = [
     bestPlan: 'standard',
     bestPlanWhy: 'Most carpentry fixes are simple or medium jobs. Standard covers up to 4 jobs and ₦40,000 of labour a month across every trade, booked within 24 hours.',
     faqs: [
-      { q: 'Do you build wardrobes and kitchen cabinets?', a: 'Yes. Building and installing a wardrobe, and kitchen cabinet installation or rebuild, are complex jobs (₦20,000 of labour value). Wood, boards and fittings are materials, sourced at trade price with a receipt.' },
       { q: 'Do I pay for the new lock or hinges?', a: 'Yes. Parts are not included in any plan. We buy them at trade price and show you the receipt, and the labour to fit them is covered by your plan.' },
       { q: 'What if the door sticks again?', a: 'If our workmanship fails within 30 days, we come back and redo it free under the 30-Day Fix-It-Free Guarantee.' },
     ],
