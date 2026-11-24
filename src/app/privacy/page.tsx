@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Privacy() {
   return (
-    <LegalPage title="Privacy Policy" updated="31 October 2026">
+    <LegalPage title="Privacy Policy" updated="25 November 2026">
       <h2>1. Who we are</h2>
       <p>{COMPANY.legalName} (RC {COMPANY.rcNumber}), trading as Kewiga Works (“we”, “us”), is the data controller for personal data collected through kewigaworks.com and our WhatsApp line.
         {COMPANY.registeredAddress ? <> Our registered office is {COMPANY.registeredAddress}.</> : <> <Fill what="registered office address" /></>}
@@ -39,13 +39,14 @@ export default function Privacy() {
         <li><b>Artisans</b> we send to your job receive your first name, address, phone number and the job details, only for that job.</li>
         <li><b>WhatsApp (Meta Platforms)</b> carries our messages. WhatsApp’s own privacy policy applies to its service.</li>
         <li><b>Our website host (Netlify)</b> processes basic technical data such as IP addresses to serve the website.</li>
+        <li><b>Google (Google Analytics and Google Tag Manager)</b> measures how our website is used, only if you accept analytics cookies (see section 8).</li>
         <li><b>Banks and payment providers</b> process payments.</li>
         <li><b>Professional advisers and authorities</b> where the law requires it.</li>
       </ul>
       <p>We never sell personal data.</p>
 
       <h2>5. Data leaving Nigeria</h2>
-      <p>WhatsApp and our website host store data on servers outside Nigeria. We rely on these providers’ safeguards and only use services that offer an adequate level of protection, as the Nigeria Data Protection Act 2023 requires.</p>
+      <p>WhatsApp, our website host and Google store data on servers outside Nigeria. We rely on these providers’ safeguards and only use services that offer an adequate level of protection, as the Nigeria Data Protection Act 2023 requires.</p>
 
       <h2>6. How long we keep it</h2>
       <ul>
@@ -58,8 +59,10 @@ export default function Privacy() {
       <h2>7. Your rights</h2>
       <p>You can ask to see the personal data we hold about you, correct it, delete it, restrict or object to how we use it, withdraw consent, or receive a copy in a portable format. Message us on WhatsApp or email us and we will respond within the time the law allows. If you are unhappy with our response, you can complain to the <b>Nigeria Data Protection Commission (NDPC)</b>.</p>
 
-      <h2>8. Cookies and analytics</h2>
-      <p>Our website does not use advertising or analytics cookies, and our fonts are served from our own domain. If we add analytics later, we will update this policy and ask for your consent first.</p>
+      <h2 id="cookies">8. Cookies and analytics</h2>
+      <p>We use Google Analytics, loaded through Google Tag Manager, to understand how people use our website: which pages they visit, how they found us, roughly where they are (city or region), the type of device and browser, and which buttons they tap, such as the WhatsApp buttons. This tells us whether our marketing is working. Google Analytics sets cookies on your device to do this.</p>
+      <p><b>It only runs if you click “Accept”</b> on the cookie banner. Our legal basis is your consent. If you click “Decline”, or make no choice, no analytics cookies are set and nothing is sent to Google Analytics. You can change your mind at any time using <b>Cookie settings</b> at the bottom of every page; if you withdraw consent, we remove the analytics cookies from your browser.</p>
+      <p>Google processes this data for us and may store it outside Nigeria (see section 5). We do not use advertising cookies, we do not use analytics data to identify you personally, and we never sell it. Your cookie choice itself is saved in your browser so we do not ask you again on every page. Our fonts are served from our own domain.</p>
 
       <h2>9. Security</h2>
       <p>We limit access to personal data to people who need it, use strong passwords on our accounts and devices, and share only what each artisan needs for a job.</p>

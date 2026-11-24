@@ -2,7 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { COMPANY, PLANS, SITE, naira, waLink, WA_HELLO } from '@/lib/site';
 import { Fill } from './Fill';
-import { asset } from '@/lib/paths';
+import { BASE_PATH, asset } from '@/lib/paths';
+import { CookieSettingsLink } from './ConsentBanner';
 
 export function Footer() {
   return (
@@ -30,6 +31,7 @@ export function Footer() {
             <Link href="/artisans/">Work with us: artisans</Link>
             <Link href="/terms/">Subscription terms</Link>
             <Link href="/privacy/">Privacy policy</Link>
+            {!BASE_PATH && <CookieSettingsLink />}
           </nav>
           <div className="foot-col">
             <h2>Talk to us</h2>

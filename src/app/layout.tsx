@@ -4,6 +4,8 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { MobileWaBar } from '@/components/MobileWaBar';
 import { RevealObserver } from '@/components/RevealObserver';
+import { ConsentBanner } from '@/components/ConsentBanner';
+import { GOOGLE_TAG_BOOT } from '@/lib/consent';
 import { SITE } from '@/lib/site';
 import { BASE_PATH, asset } from '@/lib/paths';
 import './globals.css';
@@ -48,6 +50,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-NG" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
+        {/* Google Analytics, live site only (the GitHub Pages preview stays out of the counts). It loads after the visitor accepts the cookie banner. */}
+        {!BASE_PATH && <script dangerouslySetInnerHTML={{ __html: GOOGLE_TAG_BOOT }} />}
         <script dangerouslySetInnerHTML={{ __html: BOOT }} />
       </head>
       <body>
@@ -56,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <MobileWaBar />
         <RevealObserver />
+        {!BASE_PATH && <ConsentBanner />}
       </body>
     </html>
   );
